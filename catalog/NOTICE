@@ -1,0 +1,17 @@
+Dual-Substrate Federated Catalog
+
+This project is intended to reuse and adapt selected assets from:
+
+  semantic-data-catalog
+  https://github.com/tmdt-buw/semantic-data-catalog
+  Florian Hoelken et al.
+  Apache License 2.0
+
+Citation:
+
+  Hoelken et al., "Bridging the Discovery Gap in Solid Dataspaces with a
+  Semantic Data Catalog", 2nd Solid Symposium, 2025.
+
+Derived or adapted files are listed in CREDITS.md. They include the upstream
+SHACL shape, SHACL validation wrapper, DCAT serialization helper, Fuseki graph
+helpers, Solid registry membership-reading logic, and UI design/components.

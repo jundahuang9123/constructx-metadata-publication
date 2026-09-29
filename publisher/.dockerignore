@@ -1,0 +1,8 @@
+.git/
+node_modules/
+apps/publisher-ui/node_modules/
+apps/publisher-ui/dist/
+.env
+.venv/
+__pycache__/
+

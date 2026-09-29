@@ -1,0 +1,12 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<https://example.org/catalogs/solid-invalid-shacl> a dcat:Catalog ;
+    dct:title "Invalid Solid catalog" ;
+    dcat:contactPoint <https://example.org/profile/card#me> ;
+    dcat:dataset <https://example.org/datasets/no-distribution> .
+
+<https://example.org/datasets/no-distribution> a dcat:Dataset ;
+    dct:title "Dataset missing required distribution" ;
+    dcat:contactPoint <https://example.org/profile/card#me> .
+

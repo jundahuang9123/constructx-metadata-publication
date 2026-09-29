@@ -1,0 +1,14 @@
+{
+  "name": "solid-federated-catalog-publisher-workspace",
+  "private": true,
+  "scripts": {
+    "dev": "npm --workspace apps/publisher-ui run dev",
+    "build": "npm --workspace apps/publisher-ui run build",
+    "test": "npm --workspace apps/publisher-ui run test",
+    "lint": "npm --workspace apps/publisher-ui run lint"
+  },
+  "workspaces": [
+    "apps/publisher-ui"
+  ]
+}
+

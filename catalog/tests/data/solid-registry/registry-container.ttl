@@ -1,0 +1,4 @@
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
+
+<https://registry.example/public/test/>
+    ldp:contains <https://registry.example/public/test/member-alice> .

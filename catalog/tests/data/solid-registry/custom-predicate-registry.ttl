@@ -1,0 +1,4 @@
+@prefix ex: <https://example.org/vocab#> .
+
+<https://registry.example/public/test/>
+    ex:hasParticipantRecord <https://registry.example/public/test/member-alice> .

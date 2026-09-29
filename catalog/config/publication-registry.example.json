@@ -1,0 +1,46 @@
+{
+  "participants": [
+    {"id": "constructx-participant", "active": true}
+  ],
+  "principals": [
+    {
+      "id": "metadata-publisher",
+      "participantId": "constructx-participant",
+      "active": true,
+      "tokenSha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "identities": [
+        {"type": "did", "value": "did:example:constructx-participant"}
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "constructx-edc",
+      "participantId": "constructx-participant",
+      "kind": "edc",
+      "catalogIri": "https://example.org/catalog/constructx-edc",
+      "active": true
+    },
+    {
+      "id": "solid-pod",
+      "participantId": "constructx-participant",
+      "kind": "solid",
+      "catalogIri": "https://example.org/catalog/solid-pod",
+      "active": true
+    }
+  ],
+  "grants": [
+    {
+      "principalId": "metadata-publisher",
+      "sourceId": "constructx-edc",
+      "operations": ["publish", "withdraw"],
+      "active": true
+    },
+    {
+      "principalId": "metadata-publisher",
+      "sourceId": "solid-pod",
+      "operations": ["publish", "withdraw"],
+      "active": true
+    }
+  ]
+}

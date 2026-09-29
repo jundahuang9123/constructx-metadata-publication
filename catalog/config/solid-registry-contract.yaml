@@ -1,0 +1,41 @@
+version: 1
+
+name: florian-solid-registry-default
+
+description: >
+  Default Solid registry contract based on an LDP container whose contained
+  member resources list participant WebIDs using foaf:member.
+
+registry:
+  url_env: SOLID_REGISTRY_URL
+  rdf_format: auto
+
+shape:
+  type: ldp-container-member-resources
+
+  container:
+    member_resource_predicates:
+      - http://www.w3.org/ns/ldp#contains
+
+  member_resource:
+    webid_predicates:
+      - http://xmlns.com/foaf/0.1/member
+
+fetch:
+  follow_member_resources: true
+  timeout_seconds: 10
+
+matching:
+  strategy: exact
+  normalize:
+    trim: true
+    preserve_fragment: true
+    lowercase_scheme_host: false
+
+cache:
+  ttl_seconds_env: SOLID_REGISTRY_CACHE_TTL_SECONDS
+  default_ttl_seconds: 300
+
+failure:
+  fail_closed: true
+  unregistered_status: 403

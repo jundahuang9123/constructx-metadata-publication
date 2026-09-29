@@ -1,0 +1,33 @@
+[
+  {
+    "@context": {
+      "@vocab": "https://w3id.org/edc/v0.0.1/ns/",
+      "dct": "http://purl.org/dc/terms/",
+      "dcat": "http://www.w3.org/ns/dcat#",
+      "cx": "https://w3id.org/construct-dcat#"
+    },
+    "@id": "walls-001",
+    "properties": {
+      "name": "Illustrative project wall schedule",
+      "dct:description": {"@value": "Two approved representations of a wall schedule.", "@language": "en"},
+      "dct:modified": {"@value": "2026-09-29", "@type": "http://www.w3.org/2001/XMLSchema#date"},
+      "dcat:keyword": ["wall", "construction"],
+      "cx:describesAssetType": {"@id": "https://standards.buildingsmart.org/IFC/DEV/IFC4_3/OWL#IfcWall"},
+      "cx:usesOntology": {"@id": "https://w3id.org/bot#"},
+      "internalNote": "EXCLUDED_INTERNAL_NOTE"
+    },
+    "privateProperties": {"token": "EXCLUDED_PRIVATE_TOKEN"},
+    "dataAddress": {"type": "HttpData", "baseUrl": "http://private-backend.invalid/walls"}
+  },
+  {
+    "@context": {"@vocab": "https://w3id.org/edc/v0.0.1/ns/"},
+    "@id": "asphalt-dpp-28432002",
+    "properties": {"name": "Illustrative asphalt DPP", "contenttype": "application/json"},
+    "dataAddress": {"type": "HttpData", "baseUrl": "http://data-source:8080/asphalt_dpp.json"}
+  },
+  {
+    "@id": "unapproved-asset",
+    "properties": {"name": "EXCLUDED_UNAPPROVED_ASSET"},
+    "privateProperties": {"note": "EXCLUDED_OTHER_PRIVATE_NOTE"}
+  }
+]

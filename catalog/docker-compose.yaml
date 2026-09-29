@@ -1,0 +1,42 @@
+services:
+  catalog-solid:
+    profiles: ["solid"]
+    build: .
+    environment:
+      CATALOG_MODE: solid
+      FUSEKI_URL: http://fuseki-solid:3030/solid
+      SOLID_REGISTRY_URL: ${SOLID_REGISTRY_URL:-https://solid-community-server.tmdt.info/semanticdatacatalog/public/test/}
+      SOLID_AUTH_MODE: ${SOLID_AUTH_MODE:-oidc}
+    depends_on:
+      - fuseki-solid
+    ports:
+      - "8000:8000"
+
+  catalog-edc:
+    profiles: ["edc"]
+    build: .
+    environment:
+      CATALOG_MODE: edc
+      FUSEKI_URL: http://fuseki-edc:3030/edc
+    depends_on:
+      - fuseki-edc
+    ports:
+      - "8000:8000"
+
+  fuseki-solid:
+    profiles: ["solid"]
+    image: stain/jena-fuseki:latest
+    environment:
+      ADMIN_PASSWORD: admin
+      FUSEKI_DATASET_1: solid
+    ports:
+      - "3031:3030"
+
+  fuseki-edc:
+    profiles: ["edc"]
+    image: stain/jena-fuseki:latest
+    environment:
+      ADMIN_PASSWORD: admin
+      FUSEKI_DATASET_1: edc
+    ports:
+      - "3032:3030"

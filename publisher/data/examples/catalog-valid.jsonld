@@ -1,0 +1,23 @@
+{
+  "@context": {
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dct": "http://purl.org/dc/terms/"
+  },
+  "@id": "https://example.org/catalogs/publisher-demo-jsonld",
+  "@type": "dcat:Catalog",
+  "dct:title": "Publisher JSON-LD demo catalogue",
+  "dcat:dataset": {
+    "@id": "https://example.org/datasets/demo-water",
+    "@type": "dcat:Dataset",
+    "dct:title": "Demo water observations",
+    "dcat:distribution": {
+      "@id": "https://example.org/datasets/demo-water/distribution",
+      "@type": "dcat:Distribution",
+      "dcat:downloadURL": {
+        "@id": "https://example.org/data/demo-water.csv"
+      },
+      "dcat:mediaType": "text/csv"
+    }
+  }
+}
+

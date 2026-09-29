@@ -1,0 +1,9 @@
+services:
+  publisher-ui:
+    build: .
+    environment:
+      VITE_DEFAULT_IDP: ${VITE_DEFAULT_IDP:-https://solidcommunity.net}
+      VITE_CENTRAL_CATALOG_URL: ${VITE_CENTRAL_CATALOG_URL:-http://localhost:8000/catalog}
+    ports:
+      - "5173:5173"
+

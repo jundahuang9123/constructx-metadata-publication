@@ -1,0 +1,10 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<https://example.org/catalogs/invalid> a dcat:Catalog ;
+    dct:title "Invalid catalogue" ;
+    dcat:dataset <https://example.org/datasets/no-distribution> .
+
+<https://example.org/datasets/no-distribution> a dcat:Dataset ;
+    dct:title "Dataset missing distribution" .
+

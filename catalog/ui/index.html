@@ -1,0 +1,88 @@
+<!-- Adapted from tmdt-buw/semantic-data-catalog (F. Hoelken et al.), Apache-2.0. -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Federated Catalog Discovery</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Solid mode</p>
+          <h1>Federated Catalog Discovery</h1>
+        </div>
+        <section class="status-strip" aria-label="Catalog status">
+          <div>
+            <span>Mode</span>
+            <strong id="modeValue">-</strong>
+          </div>
+          <div>
+            <span>Datasets</span>
+            <strong id="datasetCount">-</strong>
+          </div>
+          <div>
+            <span>Registry</span>
+            <strong id="registryStatus">-</strong>
+          </div>
+          <div>
+            <span>Fuseki</span>
+            <strong id="fusekiStatus">-</strong>
+          </div>
+        </section>
+      </header>
+
+      <section class="toolbar" aria-label="Dataset filters">
+        <label class="search">
+          <span>Search</span>
+          <input id="searchInput" type="search" placeholder="Title, provider, type" />
+        </label>
+        <button id="refreshButton" type="button">Refresh</button>
+      </section>
+
+      <section class="content-grid">
+        <section class="dataset-panel" aria-label="Datasets">
+          <table>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Provider</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody id="datasetRows"></tbody>
+          </table>
+          <p id="emptyState" class="empty" hidden>No datasets match the current filter.</p>
+        </section>
+
+        <aside class="detail-panel" aria-label="Dataset detail">
+          <div id="detailEmpty" class="detail-empty">Select a dataset to inspect its metadata.</div>
+          <div id="detailContent" hidden>
+            <p class="eyebrow">Dataset detail</p>
+            <h2 id="detailTitle"></h2>
+            <dl class="metadata-list">
+              <div>
+                <dt>Dataset IRI</dt>
+                <dd id="detailId"></dd>
+              </div>
+              <div>
+                <dt>Provider</dt>
+                <dd id="detailProvider"></dd>
+              </div>
+              <div>
+                <dt>Types</dt>
+                <dd id="detailTypes"></dd>
+              </div>
+            </dl>
+            <h3>RDF Graph</h3>
+            <div id="rdfGraph" class="rdf-graph"></div>
+          </div>
+        </aside>
+      </section>
+    </main>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
+

@@ -1,0 +1,19 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix shape: <urn:constructx:publication-shape:> .
+
+# Provisional publication profile, NOT complete ConstructDCAT or DCAT-AP conformance.
+# Root/source authority, topology and explicit types are checked separately.
+shape:Catalog a sh:NodeShape ; sh:targetClass dcat:Catalog ; sh:nodeKind sh:IRI ;
+    sh:property [ sh:path dct:title ; sh:minCount 1 ; sh:nodeKind sh:Literal ] .
+shape:Dataset a sh:NodeShape ; sh:targetClass dcat:Dataset ; sh:nodeKind sh:IRI ;
+    sh:property [ sh:path dct:title ; sh:minCount 1 ; sh:nodeKind sh:Literal ] ;
+    sh:property [ sh:path dcat:distribution ; sh:minCount 1 ;
+        sh:nodeKind sh:IRI ; sh:class dcat:Distribution ] .
+shape:Distribution a sh:NodeShape ; sh:targetClass dcat:Distribution ; sh:nodeKind sh:IRI ;
+    sh:property [ sh:path dcat:accessURL ; sh:minCount 1 ; sh:nodeKind sh:IRI ] ;
+    sh:property [ sh:path dcat:accessService ; sh:minCount 1 ;
+        sh:nodeKind sh:IRI ; sh:class dcat:DataService ] .
+shape:Service a sh:NodeShape ; sh:targetClass dcat:DataService ; sh:nodeKind sh:IRI ;
+    sh:property [ sh:path dcat:endpointURL ; sh:minCount 1 ; sh:nodeKind sh:IRI ] .

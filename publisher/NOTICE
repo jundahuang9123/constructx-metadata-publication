@@ -1,0 +1,13 @@
+Solid Federated Catalogue Publisher
+
+This project builds on catalogue conventions and selected implementation ideas
+from:
+
+  semantic-data-catalog
+  https://github.com/tmdt-buw/semantic-data-catalog
+  Florian Hoelken et al.
+  Apache License 2.0
+
+It is a separate publisher application. It does not replace or modify Florian's
+Solid catalogue application, and it does not install code into a Solid Pod.
+

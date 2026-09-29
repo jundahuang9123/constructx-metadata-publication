@@ -1,0 +1,55 @@
+{
+  "sourceId": "connector-a",
+  "catalogIri": "https://example.org/catalog/connector-a",
+  "title": "Construct-X provider A — discovery metadata",
+  "description": "Synthetic integration fixture. Replace with approved provider information.",
+  "publisherIri": "did:web:provider-a.example.org",
+  "dspEndpoint": "https://provider-a.example.org/dsp/2025-1",
+  "management": {
+    "baseUrl": "http://127.0.0.1:29110/management",
+    "apiKeyEnv": "MANAGEMENT_API_KEY",
+    "queryPath": "/v3/assets/request",
+    "pageSize": 100,
+    "maxPages": 1000,
+    "sortField": "id"
+  },
+  "publication": {
+    "catalogUrl": "http://127.0.0.1:8000",
+    "tokenEnv": "CATALOG_PUBLISHER_TOKEN"
+  },
+  "selection": {"assetIds": ["walls-001", "asphalt-dpp-28432002"]},
+  "approvedProperties": [
+    "http://purl.org/dc/terms/title",
+    "http://purl.org/dc/terms/description",
+    "http://purl.org/dc/terms/modified",
+    "http://www.w3.org/ns/dcat#mediaType",
+    "http://www.w3.org/ns/dcat#distribution",
+    "http://www.w3.org/ns/dcat#keyword",
+    "https://w3id.org/construct-dcat#describesAssetType",
+    "https://w3id.org/construct-dcat#usesOntology",
+    "https://w3id.org/construct-dcat#alignsWithConcept",
+    "https://w3id.org/construct-dcat#hasAASSubmodel"
+  ],
+  "catalogs": [
+    {"id": "https://example.org/catalog/project-1", "title": "Project 1"}
+  ],
+  "assetOverrides": {
+    "walls-001": {
+      "catalogIri": "https://example.org/catalog/project-1",
+      "distributions": [
+        {
+          "id": "https://example.org/distribution/walls-ifc",
+          "mediaType": "application/octet-stream",
+          "formatIri": "https://example.org/format/ifc-spf",
+          "conformsTo": "https://example.org/schema/wall-schedule-ifc"
+        },
+        {
+          "id": "https://example.org/distribution/walls-csv",
+          "mediaType": "text/csv",
+          "formatIri": "https://example.org/format/csv",
+          "conformsTo": "https://example.org/schema/wall-schedule-csv"
+        }
+      ]
+    }
+  }
+}
